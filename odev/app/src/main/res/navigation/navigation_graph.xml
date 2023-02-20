@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/landnarkList">
+
+    <fragment
+        android:id="@+id/landnarkList"
+        android:name="com.example.odev.LandnarkList"
+        android:label="fragment_landnark_list"
+        tools:layout="@layout/fragment_landnark_list" >
+        <action
+            android:id="@+id/action_landnarkList_to_landmarkDetail2"
+            app:destination="@id/landmarkDetail" />
+    </fragment>
+    <fragment
+        android:id="@+id/landmarkDetail"
+        android:name="com.example.odev.LandmarkDetail"
+        android:label="fragment_landmark_detail"
+        tools:layout="@layout/fragment_landmark_detail" >
+        <action
+            android:id="@+id/action_landmarkDetail_to_landnarkList"
+            app:destination="@id/landnarkList" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="country"
+            app:argType="string" />
+        <argument
+            android:name="image"
+            app:argType="integer" />
+    </fragment>
+</navigation>
